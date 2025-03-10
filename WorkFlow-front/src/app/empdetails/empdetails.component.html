@@ -1,0 +1,107 @@
+<p>empdetails works!</p>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg myrgb p-3" style="width: 420px; border-radius: 12px;">
+      <div class="card-body text-center">
+        
+        <h3 class="card-title fw-bold text-primary">{{ empobj.name }}</h3>
+        
+        <div class="card-text">
+          <h5>
+            <label for="" class="fw-semibold">Status:</label> &nbsp;
+            <span
+              [ngClass]="{
+                badge: true,
+                'rounded-pill': true,
+                'status-badge': true,
+                'bg-success': empobj.status.toLowerCase() === 'active',
+                'bg-warning': empobj.status.toLowerCase() === 'inactive',
+                'bg-danger': empobj.status.toLowerCase() === 'suspend'
+              }"
+            >
+              {{ empobj.status }}
+            </span>
+          </h5>
+          
+          <hr class="my-3" />
+  
+          <p class="mb-1"><strong>📞 Mobile:</strong> {{ empobj.mobileno }}</p>
+          <p class="mb-1"><strong>👤 Created By:</strong> {{ empobj.createdBy }}</p>
+          <p class="mb-1"><strong>📅 Created Date:</strong> {{ empobj.createdDate }}</p>
+          <p class="mb-1"><strong>✉️ Email:</strong> {{ empobj.emailid }}</p>
+          <p class="mb-1"><strong>🏢 Department:</strong> {{ empobj.department }}</p>
+          <p class="mb-1"><strong>✏️ Updated By:</strong> {{ empobj.updateBy }}</p>
+          <p class="mb-1"><strong>🗓 Updated Date:</strong> {{ empobj.updatedDate }}</p>
+          <p class="mb-1"><strong>💰 Salary:</strong> {{ empobj.salary }}</p>
+          <p class="mb-1"><strong>🌍 Country:</strong> {{ empobj.country.cname }}</p>
+        </div>
+        
+        <hr class="my-3" />
+  
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success px-3" (click)="OnUpdate()">
+            <i class="fas fa-edit"></i> Update
+          </button>
+          <button routerLink="/home" class="btn btn-warning px-3">
+            <i class="fas fa-home"></i> Home
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <app-footer class="fixed- bottom"></app-footer>
+
+<!-- <br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div>
+        <div class="card myrgb" style="width: 400px">
+          <div class="card-body">
+            <h4 class="card-title">{{ empobj.name }}</h4>
+            <div class="card-text">
+              <h5 style="text-align: center">
+                <label for="">Status:</label> &nbsp;
+                <span
+                  [ngClass]="{
+                    badge: true,
+                    'rounded-pill': true,
+                    'bg-success': empobj.status.toLowerCase() === 'active',
+                    'bg-warning': empobj.status.toLowerCase() === 'inactive',
+                    'bg-danger': empobj.status.toLowerCase() === 'suspend'
+                  }"
+                  style="padding: 10px"
+                >
+                  {{ empobj.status }}
+                </span>
+              </h5>
+              <span> {{ empobj.mobileno }} </span><br />
+              <span>
+                <strong> {{ empobj.createdBy }} </strong>
+              </span>
+
+              <span> {{ empobj.id }} </span><br />
+              <span> {{ empobj.name }} </span><br />
+              <span> {{ empobj.department }} </span><br />
+              <span> {{ empobj.status}} </span><br />
+              <span> {{ empobj.emailid }} </span><br />
+             
+              <span> {{ empobj.createdDate }} </span><br />
+              <span> {{ empobj.updateBy }} </span><br />
+              <span> {{ empobj.updatedDate }} </span><br />
+              <span> {{ empobj.salary }} </span><br />
+
+            </div>
+
+            <button class="btn btn-primary" (click)="OnUpdate()">
+              Update Employee
+            </button>
+            <button routerLink="" class="btn btn-warning">Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
